@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Hola!Soy Griselis Herrera</title>
+<style>
+:root{
+  --claro:#E8F5E9; --medio:#A5D6A7; --oscuro:#2E7D32;
+  --acento:#66BB6A; --beige:#F9FBE7; --texto:#2E3B2E;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth}
+body{background:var(--beige);color:var(--texto)}
+header{position:fixed;top:0;width:100%;background:white;display:flex;justify-content:space-between;align-items:center;padding:15px 5%;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:100}
+nav a{margin-left:20px;text-decoration:none;color:var(--texto);font-weight:600}
+nav a:hover{color:var(--oscuro)}
+#menu{display:none;font-size:24px;cursor:pointer}
+
+.hero{background:linear-gradient(135deg,var(--oscuro),var(--acento));color:white;text-align:center;padding:130px 8% 90px}
+.hero h1{font-size:2.5rem} .btn{margin-top:20px;padding:12px 25px;border-radius:25px;border:none;background:white;color:var(--oscuro);font-weight:700;cursor:pointer}
+
+section{padding:70px 5%}
+h2{text-align:center;color:var(--oscuro);margin-bottom:10px}
+.linea{width:60px;height:4px;background:var(--acento);margin:0 auto 40px;border-radius:2px}
+
+.sobre{background:white;display:flex;gap:30px;align-items:center;padding:30px;border-radius:15px;flex-wrap:wrap;justify-content:center}
+.sobre img{width:180px;height:180px;border-radius:50%;border:5px solid var(--claro)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card,.skill{background:white;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+.bar{background:var(--claro);height:10px;border-radius:10px;margin-top:8px}
+.fill{height:100%;background:var(--oscuro);width:0;transition:1.5s}
+
+.proj-top{height:130px;background:linear-gradient(135deg,var(--medio),var(--acento));border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;margin-bottom:15px}
+
+.contacto{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:white;padding:30px;border-radius:15px}
+input,textarea{width:100%;padding:12px;margin-bottom:12px;border:1px solid var(--claro);border-radius:8px}
+.btn2{background:var(--oscuro);color:white;padding:12px 25px;border:none;border-radius:25px;cursor:pointer}
+
+footer{text-align:center;padding:20px;background:var(--oscuro);color:white}
+
+@media(max-width:768px){
+  nav{position:fixed;top:60px;right:-100%;background:white;width:65%;height:100vh;display:flex;flex-direction:column;padding:20px;transition:.3s}
+  nav.active{right:0} nav a{margin:15px 0}
+  #menu{display:block}
+  .contacto{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <b style="color:var(--oscuro)">Mi Portafolio</b>
+  <div id="menu">☰</div>
+  <nav id="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre">Acerca de</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <h1>¡Hola! Soy Giselis Herrera]</h1>
+  <p>Desarrolladora Web -En formacion</p>
+  <button class="btn" onclick="document.getElementById('contacto').scrollIntoView()">Contáctame</button>
+</div>
+
+<section id="sobre">
+  <h2>Acerca de Mí</h2><div class="linea"></div>
+  <div class="sobre">
+    
+    <p style="flex:1;min-width:250px">Soy Griselis Herrera, Me gusta el desarrollo wed y estoy aprendiendo a crear paginas con HTML, CSS y JavaScrip. Me considero una persona responsable, con ganas de aprender y de mejorar cada dia. Mi objetivo es seguir formandome para crear sitios wed que funcionen. </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Mis Habilidades</h2><div class="linea"></div>
+  <div class="grid">
+    <div class="skill">HTML <div class="bar"><div class="fill" data-w="90%"></div></div></div>
+    <div class="skill">CSS<div class="bar"><div class="fill" data-w="85%"></div></div></div>
+    <div class="skill">JavaScrip<div class="bar"><div class="fill" data-w="80%"></div></div></div>
+    <div class="skill">responsive><div class="fill" data-w="95%"></div></div></div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <h2>Mi Proyectos</h2><div class="linea"></div>
+  <div class="grid">
+    <div class="card"><div class="proj-top">Proyecto 1</div><h4>Sitio Web </h4><p>Sitio moderno con HTML, CSS y JS.</p><br><a href="#" style="color:var(--acento)"></a></div>
+   
+</section>
+
+<section id="contacto">
+  <h2>Contáctame</h2><div class="linea"></div>
+  <div class="contacto">
+    <div>
+      <p>📧 griselisherrera27@gmail.com<br>📞 +57 3242307881<br>📍 Cartagena, Colombia</p>
+    </div>
+    <form id="form">
+      <input id="nombre" placeholder="Nombre" required>
+      <input id="email" type="email" placeholder="Email" required>
+      <textarea id="msg" placeholder="Mensaje" required></textarea>
+      <button class="btn2" type="submit">Enviar Mensaje</button>
+    </form>
+  </div>
+</section>
+
+<footer>© 2025 Mi Portfolio - Griselis Herrera</footer>
+
+<script>
+// 1. Menu responsive
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav');
+menu.addEventListener('click', () => nav.classList.toggle('active'));
+
+// 2. Barras animadas al hacer scroll
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.fill').forEach(b => {
+    if(b.getBoundingClientRect().top < window.innerHeight) b.style.width = b.dataset.w;
+  });
+});
+
+// 3. Validación formulario
+document.getElementById('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const n = document.getElementById('nombre').value;
+  alert('Gracias ' + n + ', mensaje enviado 💚');
+  e.target.reset();
+});
+
+// 4. Click en proyectos
+document.querySelectorAll('.card a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Aquí va tu link de GitHub / Netlify');
+  });
+});
+</script>
+</body>
+</html>
